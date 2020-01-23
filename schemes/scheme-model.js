@@ -39,18 +39,29 @@ function findSteps(schemeId) {
     .orderBy("s.step_number");
 }
 
-function add() {
-
+function add(schemeData) { // FIXME: Return
+  console.log("Adding data:", schemeData);
+  return db("schemes")
+    .insert(schemeData); // More details?
 }
 
-function addStep() {
-
+function addStep() { // Stretch Goal
+  
 }
 
-function update() {
-
+function update(schemeData, id) { // FIXME
+  console.log("Updating", id, "with", schemeData);
+  return db("schemes")
+    .where ({ id: id })
+    .update({ scheme_name: schemeData.scheme_name });
 }
 
-function remove() {
+function remove(id) {
+  // TODO: Return deleted item.
+  // Currently only returning # of items deleted.
 
+  // DELETE FROM table_name WHERE condition
+  return db("schemes")
+  .where({ id: id })
+  .del();
 }

@@ -16,7 +16,7 @@ content-type: application/json
 }
 
 ### Updates a given scheme
-PUT http://localhost:5000/api/schemes:45
+PUT http://localhost:5000/api/schemes/6
 content-type: application/json
 
 {
@@ -24,7 +24,7 @@ content-type: application/json
 }
 
 ### Removes a given scheme and all associated steps
-DELETE http://localhost:5000/api/schemes/45
+DELETE http://localhost:5000/api/schemes/1
 
 ### Stretch goal: Add a step to a scheme.
 POST http://localhost:5000/api/schemes/45/addStep
@@ -33,5 +33,4 @@ content-type: application/json
 {
   "step_number": 7,
   "instructions": "Shouldn't you do the other 6 steps first?"
-
 }
