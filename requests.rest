@@ -1,0 +1,36 @@
+### Gets master list of schemes (without steps)
+GET http://localhost:5000/api/schemes 
+
+### Gets a single scheme
+GET http://localhost:5000/api/schemes/1
+
+### Gets all steps for a given scheme, ordered correctly
+GET http://localhost:5000/api/schemes/5/steps 
+
+### Adds a new scheme
+POST http://localhost:5000/api/schemes
+content-type: application/json
+
+{
+  "scheme_name": "Money Laundering"
+}
+
+### Updates a given scheme
+PUT http://localhost:5000/api/schemes/6
+content-type: application/json
+
+{
+  "scheme_name": "Clothes Laundering"
+}
+
+### Removes a given scheme and all associated steps
+DELETE http://localhost:5000/api/schemes/1
+
+### Stretch goal: Add a step to a scheme.
+POST http://localhost:5000/api/schemes/45/addStep
+content-type: application/json
+
+{
+  "step_number": 7,
+  "instructions": "Shouldn't you do the other 6 steps first?"
+}

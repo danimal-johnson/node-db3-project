@@ -49,7 +49,7 @@ router.get('/:id/steps', (req, res) => {
 router.post('/', (req, res) => {
   const schemeData = req.body;
 
-  Schemes.add(schemeData)
+  Schemes.add(schemeData) // TODO
   .then(scheme => {
     res.status(201).json(scheme);
   })
@@ -65,7 +65,7 @@ router.post('/:id/steps', (req, res) => {
   Schemes.findById(id)
   .then(scheme => {
     if (scheme) {
-      Schemes.addStep(stepData, id)
+      Schemes.addStep(stepData, id) // TODO
       .then(step => {
         res.status(201).json(step);
       })
@@ -82,10 +82,11 @@ router.put('/:id', (req, res) => {
   const { id } = req.params;
   const changes = req.body;
 
+  console.log("Trying to set", id, "to", req.body );
   Schemes.findById(id)
   .then(scheme => {
     if (scheme) {
-      Schemes.update(changes, id)
+      Schemes.update(changes, id) // TODO
       .then(updatedScheme => {
         res.json(updatedScheme);
       });
